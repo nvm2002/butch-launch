@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUTCH | Official Empire Blueprint</title>
+    <style>
+        /* CSS: The "Sleek Black & Neon Blue" Aesthetic */
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-green: #00ff88;
+            --dark-bg: #050505;
+            --card-bg: #111111;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 20px var(--neon-blue);
+            margin: 0;
+            letter-spacing: 10px;
+        }
+
+        .tagline { color: #888; font-style: italic; font-size: 1.2rem; }
+
+        /* Feature Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.4s ease;
+        }
+
+        .card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.15);
+        }
+
+        .card h3 { color: var(--neon-blue); margin-top: 0; font-size: 1.5rem; }
+
+        /* ROI & Analytics Section */
+        .roi-panel {
+            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .roi-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 3rem;
+            color: var(--neon-green);
+            font-weight: bold;
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* Modal / Popup */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            align-items: center; justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #000;
+            border: 2px solid var(--neon-blue);
+            padding: 50px;
+            border-radius: 30px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.3);
+        }
+
+        .btn {
+            background: var(--neon-blue);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div id="pitchModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: var(--neon-blue);">INVESTOR BLUEPRINT</h2>
+            <p>Ready to capture the attention of discerning customers looking for style and performance.</p>
+            <ul style="text-align: left; color: #ccc;">
+                <li>Premium Market Positioning</li>
+                <li>Significant Revenue Growth</li>
+                <li>Innovative Brand Differentiation</li>
+            </ul>
+            <button class="btn" onclick="closeModal()">Initialize Launch</button>
+        </div>
+    </div>
+
+    <header>
+        <h1>BUTCH</h1>
+        <p class="tagline">By HiveChem & HexaChem Leadership Team</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3>Distinctive Aesthetic</h3>
+                <p>Sleek, black, ergonomic chassis with striking neon blue LED accents and iconic BUTCH leaf logo.</p>
+            </div>
+            <div class="card">
+                <h3>Visible Reservoir</h3>
+                <p>Transparent window provides clear visibility of the liquid for easy monitoring of supply.</p>
+            </div>
+            <div class="card">
+                <h3>Advanced Delivery</h3>
+                <p>Engineered for consistent and satisfying vapor production, reflecting commitment to quality.</p>
+            </div>
+            <div class="card">
+                <h3>Optimized Portability</h3>
+                <p>Designed for discreet and comfortable on-the-go use without compromising on experience.</p>
+            </div>
+        </div>
+
+        <section class="roi-panel">
+            <h2 style="color: var(--neon-green);">Strategic ROI Analysis</h2>
+            <p>Projected impact on market expansion and brand loyalty.</p>
+            <div class="roi-grid">
+                <div class="stat">
+                    <span class="stat-value">25%</span>
+                    <small>REVENUE GROWTH</small>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">HIGH</span>
+                    <small>CUSTOMER LOYALTY</small>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">LEAD</span>
+                    <small>MARKET POSITION</small>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 HexaChem / HiveChem Confidential Strategy. #BUTCHElevated #Innovation
+    </footer>
+
+    <script>
+        // Professional Logic
+        window.onload = function() {
+            // Lalabas ang modal pagkalipas ng 1.5 seconds para sa impact
+            setTimeout(() => {
+                document.getElementById('pitchModal').style.display = 'flex';
+            }, 1500);
+        };
+
+        function closeModal() {
+            document.getElementById('pitchModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
